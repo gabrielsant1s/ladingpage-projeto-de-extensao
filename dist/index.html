@@ -3,36 +3,336 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Conheça a Pão de Mestre: padaria e conveniência com bolos de diversos sabores, pudim, salgados e delícias para o seu dia.">
+  <meta name="description" content="Conheça a Pão de Mestre: padaria e conveniência com bolos artesanais, pães fresquinhos, salgados e ambiente acolhedor para o seu dia a dia.">
   <meta name="theme-color" content="#411111">
   <title>Pão de Mestre — Padaria e Conveniência</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <div class="topline">DO PRIMEIRO CAFÉ ÀQUELA PAUSA NO DIA.</div>
+  
   <header class="header wrap">
-    <a class="brand" href="#inicio" aria-label="Pão de Mestre, início"><img src="assets/logo.png" alt="Pão de Mestre — Padaria e Conveniência" width="82" height="82"></a>
-    <nav aria-label="Navegação principal"><a href="#sabores">Nossos sabores</a><a href="#sobre">A padaria</a><a class="nav-contact" href="#contato">Fale com a gente <span aria-hidden="true">↗</span></a></nav>
+    <a class="brand" href="#inicio" aria-label="Pão de Mestre, início">
+      <img src="assets/logo.png" alt="Pão de Mestre — Padaria e Conveniência" width="82" height="82">
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#sabores">Nossos sabores</a>
+      <a href="#galeria">Nosso espaço</a>
+      <a href="#sobre">A padaria</a>
+      <a class="nav-contact" href="#contato">Fale com a gente <span aria-hidden="true">↗</span></a>
+    </nav>
   </header>
+
   <main id="conteudo">
+    <!-- HERO SECTION -->
     <section class="hero wrap" id="inicio">
-      <div class="hero-copy"><p class="eyebrow"><span></span> PADARIA & CONVENIÊNCIA</p><h1>Seu dia merece<br>um sabor de<br><em>mestre.</em></h1><p class="intro">Um bolo para compartilhar. Um salgado para a pausa. As delícias de padaria que deixam a rotina muito mais gostosa.</p><a class="button" href="#sabores">Conheça nossos sabores <span aria-hidden="true">↗</span></a><div class="hero-foot"><span class="little-star" aria-hidden="true">✳</span><p>Para o café, para o lanche,<br>para os seus bons momentos.</p></div></div>
-      <figure class="hero-photo"><img src="assets/mesa-padaria.png" alt="Mesa ilustrativa com pães, bolo e pudim de caramelo" width="1536" height="1024" fetchpriority="high"><div class="photo-stamp">BONS<br><i>momentos,</i><br>BONS SABORES</div><figcaption>Imagem ilustrativa.</figcaption><div class="photo-label"><span>PODE CHEGAR.</span><strong>O próximo momento gostoso<br>do seu dia começa aqui.</strong></div></figure>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> PADARIA & CONVENIÊNCIA</p>
+        <h1>Seu dia merece<br>um sabor de<br><em>mestre.</em></h1>
+        <p class="intro">Um bolo para compartilhar. Um salgado para a pausa. As delícias de padaria que deixam a rotina muito mais gostosa.</p>
+        
+        <div class="hero-actions">
+          <a class="button" href="#sabores">Conheça nossos sabores <span aria-hidden="true">↗</span></a>
+          <a class="button-secondary" href="#galeria">Ver nosso espaço 📸</a>
+        </div>
+
+        <div class="hero-foot">
+          <span class="little-star" aria-hidden="true">✳</span>
+          <p>Para o café, para o lanche,<br>para os seus bons momentos.</p>
+        </div>
+      </div>
+
+      <figure class="hero-photo">
+        <img src="assets/mesa-padaria.png" alt="Mesa ilustrativa com pães, bolo e pudim de caramelo" width="1536" height="1024" fetchpriority="high">
+        <div class="photo-stamp">BONS<br><i>momentos,</i><br>BONS SABORES</div>
+        <figcaption>Imagem ilustrativa.</figcaption>
+        <div class="photo-label">
+          <span>PODE CHEGAR.</span>
+          <strong>O próximo momento gostoso<br>do seu dia começa aqui.</strong>
+        </div>
+      </figure>
     </section>
-    <div class="ribbon" aria-hidden="true"><span>BOLOS</span> ✳ <span>PUDIM</span> ✳ <span>SALGADOS</span> ✳ <span>PADARIA</span> ✳ <span>CONVENIÊNCIA</span></div>
-    <section class="flavors wrap section" id="sabores"><div class="section-heading"><div><p class="eyebrow">ESCOLHA O SEU MOMENTO</p><h2>Tem sabor para<br><em>toda vontade.</em></h2></div><p>Do doce ao salgado, encontre um bom motivo<br class="desktop"> para fazer uma pausa com a Pão de Mestre.</p></div>
+
+    <div class="ribbon" aria-hidden="true">
+      <span>BOLOS</span> ✳ <span>PUDIM</span> ✳ <span>SALGADOS</span> ✳ <span>PADARIA</span> ✳ <span>CONVENIÊNCIA</span>
+    </div>
+
+    <!-- NOSSOS SABORES COM IMAGENS ILUSTRATIVAS -->
+    <section class="flavors wrap section" id="sabores">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ESCOLHA O SEU MOMENTO</p>
+          <h2>Tem sabor para<br><em>toda vontade.</em></h2>
+        </div>
+        <p>Do doce ao salgado, encontre um bom motivo<br class="desktop"> para fazer uma pausa com a Pão de Mestre.</p>
+      </div>
+
       <div class="products">
-        <article><span class="number">01 / DOCE</span><h3>Bolos & pudim</h3><p>Bolos de diversos sabores e aquele pudim que combina com a sobremesa ou com um carinho no meio do dia.</p><span class="product-note">Uma fatia de felicidade.</span></article>
-        <article><span class="number">02 / SALGADO</span><h3>Hora do lanche</h3><p>Salgados e comidas de padaria para acompanhar a sua pausa e matar a vontade de comer algo gostoso.</p><span class="product-note">Seu intervalo fica melhor aqui.</span></article>
-        <article><span class="number">03 / DIA A DIA</span><h3>Conveniência</h3><p>Praticidade junto com os sabores da padaria. Uma parada para deixar o seu dia mais simples e mais gostoso.</p><span class="product-note">Perto da sua rotina.</span></article>
-      </div><p class="availability">Consulte os sabores e a disponibilidade pelo nosso Instagram.</p>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="assets/img/IMG_8706.JPG.jpeg" alt="Bolos especiais confeitados da Pão de Mestre com chocolate e morangos" loading="lazy">
+            <span class="product-tag">Confeitaria Fina</span>
+          </div>
+          <div class="product-content">
+            <span class="number">01 / DOCE</span>
+            <h3>Bolos & pudim</h3>
+            <p>Bolos de diversos sabores e aquele pudim que combina com a sobremesa ou com um carinho no meio do dia.</p>
+            <span class="product-note">Uma fatia de felicidade.</span>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <img src="assets/img/IMG_8709.JPG.jpeg" alt="Vitrine de pães artesanais fresquinhos e salgados quentes da Pão de Mestre" loading="lazy">
+            <span class="product-tag">Fornada do Dia</span>
+          </div>
+          <div class="product-content">
+            <span class="number">02 / SALGADO</span>
+            <h3>Hora do lanche</h3>
+            <p>Salgados e comidas de padaria para acompanhar a sua pausa e matar a vontade de comer algo gostoso.</p>
+            <span class="product-note">Seu intervalo fica melhor aqui.</span>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <img src="assets/img/IMG_8702.JPG.jpeg" alt="Gôndolas de conveniência e salão de atendimento da Pão de Mestre" loading="lazy">
+            <span class="product-tag">Praticidade</span>
+          </div>
+          <div class="product-content">
+            <span class="number">03 / DIA A DIA</span>
+            <h3>Conveniência</h3>
+            <p>Praticidade junto com os sabores da padaria. Uma parada para deixar o seu dia mais simples e mais gostoso.</p>
+            <span class="product-note">Perto da sua rotina.</span>
+          </div>
+        </article>
+      </div>
+      <p class="availability">Consulte os sabores e a disponibilidade pelo nosso Instagram.</p>
     </section>
-    <section class="about" id="sobre"><div class="wrap about-inner"><div class="about-brand"><img src="assets/logo.png" width="220" height="220" alt="Marca Pão de Mestre"><span>PADARIA E CONVENIÊNCIA</span></div><div><p class="eyebrow">MUITO PRAZER, PÃO DE MESTRE</p><h2>As coisas boas<br>cabem no <em>dia a dia.</em></h2><p>Às vezes, tudo o que a gente precisa é de uma pausa gostosa. Um café acompanhado, um bolo na mesa ou um salgado no caminho.</p><p>A Pão de Mestre reúne padaria e conveniência para fazer parte desses momentos, com opções doces e salgadas para diferentes vontades.</p></div></div></section>
-    <section class="contact wrap section" id="contato"><p class="eyebrow">A CONVERSA CONTINUA POR LÁ</p><h2>Deu vontade?<br><em>Vem falar com a gente.</em></h2><p>Acompanhe as novidades e consulte os sabores disponíveis no nosso Instagram.</p><a class="button" href="https://www.instagram.com/paodemestreal/" target="_blank" rel="noopener noreferrer">Visite @paodemestreal <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></section>
+
+    <!-- CARROSSEL AUTOMÁTICO INFINITO (1,5s) COM AS IMAGENS DO RESTAURANTE -->
+    <section class="gallery wrap section" id="galeria" aria-label="Galeria de fotos do restaurante e padaria">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> NOSSO ESPAÇO & SABORES</p>
+          <h2>Conheça de perto a<br><em>Pão de Mestre.</em></h2>
+        </div>
+        <div class="carousel-heading-meta">
+          <p>Um giro completo pelas nossas vitrines, receitas especiais e salão aconchegante.</p>
+          <div class="carousel-live-badge">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span>Carrossel automático • 1,5s</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-container" id="restaurant-carousel" role="region" aria-roledescription="carrossel" aria-label="Fotos do restaurante Pão de Mestre">
+        <!-- Barra superior com temporizador e controles -->
+        <div class="carousel-topbar">
+          <div class="carousel-timer" title="Tempo restante para a próxima foto (1,5 segundos)">
+            <div class="carousel-timer-bar" id="carousel-timer-bar"></div>
+          </div>
+          
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" id="carousel-prev" aria-label="Foto anterior" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="carousel-counter" aria-live="polite">
+              <strong id="current-slide-num">01</strong>
+              <span class="counter-divider">/</span>
+              <span id="total-slides-num">08</span>
+            </div>
+            <button class="carousel-btn next" id="carousel-next" aria-label="Próxima foto" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <button class="carousel-toggle" id="carousel-toggle-play" aria-label="Pausar rotação automática" title="Pausar rotação automática" type="button">
+              <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+              <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Viewport do Carrossel Infinito -->
+        <div class="carousel-viewport" id="carousel-viewport">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Slide 1: Pães Artesanais -->
+            <div class="carousel-slide" data-index="0">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8709.JPG.jpeg" alt="Vitrine de pães artesanais fresquinhos e salgados da Pão de Mestre" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">PADARIA ARTESANAL</span>
+                  <h3>Pães Frescos & Fornada do Dia</h3>
+                  <p>Vitrines recheadas com pães de fermentação caprichada e salgados prontos a toda hora.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Bolos Especiais -->
+            <div class="carousel-slide" data-index="1">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8706.JPG.jpeg" alt="Bolo especial com morangos frescos e cookies recheados" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">CONFEITARIA FINA</span>
+                  <h3>Bolos Especiais & Confeitados</h3>
+                  <p>Receitas artesanais com chocolate nobre, morangos frescos e biscoitos selecionados.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Frios, Queijos e Rotisseria -->
+            <div class="carousel-slide" data-index="2">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8708.JPG.jpeg" alt="Balcão vitrine climatizado com frios, queijos, doces e sobremesas" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">ROTISSERIA & DOCES</span>
+                  <h3>Vitrines de Frios, Queijos & Doces</h3>
+                  <p>Fatiados finos, queijos selecionados e sobremesas no ponto certo para levar.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Bolo Trufado -->
+            <div class="carousel-slide" data-index="3">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8704.JPG.jpeg" alt="Bolo de chocolate artesanal com raspas de chocolate branco" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">SOBREMESA DO DIA</span>
+                  <h3>Bolo Trufado com Raspas Nobres</h3>
+                  <p>Combinação generosa de chocolate com raspas brancas e textura macia irresistível.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Salão do Restaurante / Padaria -->
+            <div class="carousel-slide" data-index="4">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8702.JPG.jpeg" alt="Visão geral do salão, gôndolas e balcões da Pão de Mestre" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">NOSSO AMBIENTE</span>
+                  <h3>Salão Acolhedor & Completo</h3>
+                  <p>Espaço iluminado, climatizado e organizado com todo carinho para a sua visita.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6: Bolo Festivo -->
+            <div class="carousel-slide" data-index="5">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8705.JPG.jpeg" alt="Torta festiva confeitada com morango e calda especial" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">MOMENTOS ESPECIAIS</span>
+                  <h3>Tortas & Bolos Festivos</h3>
+                  <p>Acabamento impecável e sabor marcante para tornar qualquer ocasião inesquecível.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 7: Conveniência e Mercearia -->
+            <div class="carousel-slide" data-index="6">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8703.JPG.jpeg" alt="Gôndolas de conveniência, cafés e embutidos de qualidade" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">CONVENIÊNCIA & ROTINA</span>
+                  <h3>Praticidade para o Dia a Dia</h3>
+                  <p>Gôndolas organizadas com itens selecionados, cafés, biscoitos e produtos de conveniência.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 8: Bolo Brigadeiro Gourmet -->
+            <div class="carousel-slide" data-index="7">
+              <div class="slide-card">
+                <img src="assets/img/IMG_8707.JPG.jpeg" alt="Bolo brigadeiro artesanal com raspas de chocolate" loading="lazy">
+                <div class="slide-overlay">
+                  <span class="slide-badge">RECEITA DE MESTRE</span>
+                  <h3>Bolo Brigadeiro Gourmet</h3>
+                  <p>O doce clássico preparado com cacau especial e a doçura na medida exata.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicadores de navegação (Dots) -->
+        <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Fotos do carrossel">
+          <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Ir para a foto 1" data-index="0" type="button"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ir para a foto 2" data-index="1" type="button"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ir para a foto 3" data-index="2" type="button"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ir para a foto 4" data-index="3" type="button"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ir para a foto 5" data-index="4" type="button"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ir para a foto 6" data-index="5" type="button"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ir para a foto 7" data-index="6" type="button"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ir para a foto 8" data-index="7" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE A PADARIA COM FOTO DO ESPAÇO -->
+    <section class="about" id="sobre">
+      <div class="wrap about-inner">
+        <div class="about-visual">
+          <div class="about-brand">
+            <img src="assets/logo.png" width="180" height="180" alt="Marca Pão de Mestre">
+            <span>PADARIA E CONVENIÊNCIA</span>
+          </div>
+          <div class="about-photo-wrapper">
+            <img src="assets/img/IMG_8703.JPG.jpeg" alt="Interior aconchegante da padaria e conveniência Pão de Mestre" loading="lazy">
+            <div class="about-badge-tag">
+              <span>TRADIÇÃO & AMOR AO SABOR</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-text">
+          <p class="eyebrow">MUITO PRAZER, PÃO DE MESTRE</p>
+          <h2>As coisas boas<br>cabem no <em>dia a dia.</em></h2>
+          <p>Às vezes, tudo o que a gente precisa é de uma pausa gostosa. Um café acompanhado, um bolo na mesa ou um salgado no caminho.</p>
+          <p>A Pão de Mestre reúne padaria e conveniência para fazer parte desses momentos, com opções doces e salgadas para diferentes vontades.</p>
+          
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">🥖</span>
+              <div>
+                <strong>Produção Fresca</strong>
+                <p>Fornadas preparadas continuamente para garantir crocância e maciez.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🍰</span>
+              <div>
+                <strong>Doces Especiais</strong>
+                <p>Receitas que adoçam o seu café e celebram datas importantes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / INSTAGRAM -->
+    <section class="contact wrap section" id="contato">
+      <p class="eyebrow">A CONVERSA CONTINUA POR LÁ</p>
+      <h2>Deu vontade?<br><em>Vem falar com a gente.</em></h2>
+      <p>Acompanhe as novidades e consulte os sabores disponíveis no nosso Instagram.</p>
+      <a class="button" href="https://www.instagram.com/paodemestreal/" target="_blank" rel="noopener noreferrer">
+        Visite @paodemestreal <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span>
+      </a>
+    </section>
   </main>
-  <footer class="wrap"><a class="footer-brand" href="#inicio">Pão de Mestre<span>PADARIA E CONVENIÊNCIA</span></a><p>Um sabor especial no seu dia.</p><a href="https://www.instagram.com/paodemestreal/" target="_blank" rel="noopener noreferrer">Instagram ↗<span class="sr-only"> (abre em nova aba)</span></a></footer>
+
+  <!-- RODAPÉ -->
+  <footer class="wrap">
+    <a class="footer-brand" href="#inicio">
+      Pão de Mestre<span>PADARIA E CONVENIÊNCIA</span>
+    </a>
+    <p>Um sabor especial no seu dia.</p>
+    <a href="https://www.instagram.com/paodemestreal/" target="_blank" rel="noopener noreferrer">
+      Instagram ↗<span class="sr-only"> (abre em nova aba)</span>
+    </a>
+  </footer>
 </body>
 </html>
