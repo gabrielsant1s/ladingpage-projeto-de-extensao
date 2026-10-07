@@ -475,141 +475,59 @@ h2 {
   text-align: right;
 }
 
-.carousel-live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #f4e9dd;
-  border: 1px solid #dfcfc2;
-  padding: 5px 14px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #633e2b;
-  letter-spacing: 0.5px;
-}
-
-.live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #e67e22;
-  box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.7);
-  animation: pulseDot 1.8s infinite;
-}
-
-@keyframes pulseDot {
-  0% {
-    box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(230, 126, 34, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(230, 126, 34, 0);
-  }
-}
-
 .carousel-container {
   position: relative;
   background: #fffdf9;
   border: 1px solid #ebdcd0;
   border-radius: 24px;
-  padding: 28px 28px 34px;
+  padding: 28px 14px 30px;
   box-shadow: 0 20px 45px -15px rgba(65, 17, 17, 0.08);
   margin-top: 10px;
 }
 
-.carousel-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 22px;
-}
-
-.carousel-timer {
-  flex: 1;
-  height: 5px;
-  background: #ebdcd0;
-  border-radius: 6px;
-  overflow: hidden;
+/* Palco: seta | cards | seta */
+.carousel-stage {
   position: relative;
-}
-
-.carousel-timer-bar {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #d38b13, var(--gold));
-  border-radius: 6px;
-  transition: width 0.05s linear;
-}
-
-.carousel-controls {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
 }
 
-.carousel-btn {
+/* Setas minimalistas nas laterais dos cards */
+.carousel-arrow {
   width: 40px;
   height: 40px;
+  padding: 0;
+  border: none;
   border-radius: 50%;
-  border: 1.5px solid #d9cabc;
-  background: var(--white);
+  background: transparent;
   color: var(--brown);
+  opacity: .45;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all .2s ease;
-  padding: 0;
+  transition: opacity .2s ease, color .2s ease, transform .25s ease;
 }
 
-.carousel-btn:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  transform: scale(1.08);
-}
-
-.carousel-counter {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--brown);
-  min-width: 60px;
-  text-align: center;
-}
-
-.carousel-counter strong {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 20px;
+.carousel-arrow:hover {
+  opacity: 1;
   color: #a65312;
 }
 
-.counter-divider {
-  margin-inline: 4px;
-  color: #b1b2b1;
+.carousel-arrow.prev:hover {
+  transform: translateX(-3px);
 }
 
-.carousel-toggle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #ebdcd0;
-  background: #fbf5ee;
-  color: #725b52;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all .2s ease;
+.carousel-arrow.next:hover {
+  transform: translateX(3px);
 }
 
-.carousel-toggle:hover {
-  background: #eddccb;
-  color: var(--brown);
+.carousel-arrow:focus-visible {
+  opacity: 1;
+  outline: 2px solid #a65312;
+  outline-offset: 2px;
 }
 
 .carousel-viewport {
@@ -1155,14 +1073,40 @@ footer p,footer>a:last-child {
     border-radius: 18px;
   }
 
-  .carousel-topbar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
+  /* No mobile as setas ficam sobre o card para não roubar espaço */
+  .carousel-stage {
+    display: block;
   }
 
-  .carousel-controls {
-    justify-content: space-between;
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 34px;
+    height: 34px;
+    opacity: .9;
+    background: rgba(255, 250, 242, .82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transform: translateY(-50%);
+  }
+
+  .carousel-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel-arrow.prev {
+    left: 8px;
+  }
+
+  .carousel-arrow.next {
+    right: 8px;
+  }
+
+  .carousel-arrow.prev:hover,
+  .carousel-arrow.next:hover {
+    transform: translateY(-50%);
   }
 
   .carousel-slide {

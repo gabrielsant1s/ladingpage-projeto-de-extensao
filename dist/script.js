@@ -13,10 +13,6 @@ function initRestaurantCarousel() {
   const track = document.getElementById('carousel-track');
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
-  const togglePlayBtn = document.getElementById('carousel-toggle-play');
-  const timerBar = document.getElementById('carousel-timer-bar');
-  const currentNumEl = document.getElementById('current-slide-num');
-  const totalNumEl = document.getElementById('total-slides-num');
   const dotsContainer = document.getElementById('carousel-dots');
 
   if (!carousel || !viewport || !track) return;
@@ -24,10 +20,6 @@ function initRestaurantCarousel() {
   const originalSlides = Array.from(track.querySelectorAll('.carousel-slide'));
   const totalOriginal = originalSlides.length;
   if (totalOriginal === 0) return;
-
-  if (totalNumEl) {
-    totalNumEl.textContent = String(totalOriginal).padStart(2, '0');
-  }
 
   // Configurações
   const DURATION_MS = 1500; // 1,5 segundos por slide (conforme solicitado)
@@ -102,13 +94,9 @@ function initRestaurantCarousel() {
     track.style.transform = `translate3d(-${offset}px, 0, 0)`;
   }
 
-  // Atualiza indicadores e contador visual
+  // Atualiza indicadores (dots)
   function updateUI() {
     const activeIndex = ((currentIndex % totalOriginal) + totalOriginal) % totalOriginal;
-    
-    if (currentNumEl) {
-      currentNumEl.textContent = String(activeIndex + 1).padStart(2, '0');
-    }
 
     dots.forEach((dot, idx) => {
       const isActive = idx === activeIndex;
@@ -187,17 +175,12 @@ function initRestaurantCarousel() {
     resetProgress();
   }
 
-  // Barra de progresso animada (1,5 segundos)
+  // Rotação automática (1,5 segundos)
   function animateProgress(timestamp) {
     if (!isPlaying || isHovered) return;
 
     if (!animationStart) animationStart = timestamp - pausedProgressTime;
     const elapsed = timestamp - animationStart;
-    const percent = Math.min((elapsed / DURATION_MS) * 100, 100);
-
-    if (timerBar) {
-      timerBar.style.width = `${percent}%`;
-    }
 
     if (elapsed >= DURATION_MS) {
       nextSlide();
@@ -227,9 +210,6 @@ function initRestaurantCarousel() {
   function resetProgress() {
     pausedProgressTime = 0;
     animationStart = performance.now();
-    if (timerBar) {
-      timerBar.style.width = '0%';
-    }
     if (isPlaying && !isHovered) {
       startTimer();
     }
@@ -254,29 +234,6 @@ function initRestaurantCarousel() {
       goToSlide(idx);
     });
   });
-
-  // Botão Play/Pause
-  if (togglePlayBtn) {
-    togglePlayBtn.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      const iconPause = togglePlayBtn.querySelector('.icon-pause');
-      const iconPlay = togglePlayBtn.querySelector('.icon-play');
-
-      if (isPlaying) {
-        togglePlayBtn.setAttribute('aria-label', 'Pausar rotação automática');
-        togglePlayBtn.setAttribute('title', 'Pausar rotação automática');
-        if (iconPause) iconPause.style.display = 'block';
-        if (iconPlay) iconPlay.style.display = 'none';
-        startTimer();
-      } else {
-        togglePlayBtn.setAttribute('aria-label', 'Iniciar rotação automática');
-        togglePlayBtn.setAttribute('title', 'Iniciar rotação automática');
-        if (iconPause) iconPause.style.display = 'none';
-        if (iconPlay) iconPlay.style.display = 'block';
-        pauseTimer();
-      }
-    });
-  }
 
   // Pausa no Hover para melhor experiência de visualização das fotos
   carousel.addEventListener('mouseenter', () => {
