@@ -1,4 +1,4 @@
-﻿# LandingPage Páo de Mestre
+﻿# LandingPage Pão de Mestre
 
 Alunos:
  Gabriel José dos Santos Xavier
